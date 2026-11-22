@@ -50,19 +50,19 @@ musicButton.addEventListener("click", async () => {
       musicButton.classList.add("playing");
       musicLabel.textContent = "Выключить музыку";
     } catch (error) {
-      musicLabel.textContent = "Добавь файл wanna-be-yours.mp3";
+      musicLabel.textContent = "скорее всего аудио загружается так что продолжай нажимать на него";
       console.error("Не удалось воспроизвести аудио:", error);
     }
   } else {
     birthdayAudio.pause();
     musicButton.classList.remove("playing");
-    musicLabel.textContent = "Включить I Wanna Be Yours";
+    musicLabel.textContent = "Включить музыку";
   }
 });
 
 birthdayAudio.addEventListener("ended", () => {
   musicButton.classList.remove("playing");
-  musicLabel.textContent = "Включить I Wanna Be Yours";
+  musicLabel.textContent = "Включить музыку";
 });
 
 function createHeart() {
