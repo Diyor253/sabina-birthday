@@ -83,3 +83,5 @@ function burstHearts(amount) {
     setTimeout(createHeart, i * 65);
   }
 }
+
+
