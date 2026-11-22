@@ -56,7 +56,7 @@ body {
 }
 
 .page {
-  width: min(100% - 32px, 760px);
+  width: min(100% - 40px, 1120px);
   margin: 0 auto;
   padding: 54px 0 30px;
 }
@@ -78,7 +78,25 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.welcome-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, .85fr);
+  align-items: stretch;
+  gap: 26px;
+  margin-bottom: 26px;
+}
+.welcome-grid > .card { margin-bottom: 0; }
 .hero { padding-top: 62px; padding-bottom: 52px; overflow: hidden; }
+.music-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+.music-section h2 { margin-top: 18px; }
+.music-section > p { max-width: 330px; }
+.music-hint { margin-top: 18px; color: #b18b9c; font-size: 10px; line-height: 1.7; }
 .eyebrow, .section-kicker {
   color: var(--deep-pink);
   font-size: 10px;
@@ -297,10 +315,167 @@ footer p { margin: 8px 0; font-size: 11px; }
 footer strong { color: var(--deep-pink); font: 22px "Playfair Display", serif; }
 footer small { display: block; margin-top: 15px; font-size: 9px; }
 
+@media (max-width: 820px) and (min-width: 521px) {
+  .page { width: min(100% - 32px, 680px); }
+  .welcome-grid { grid-template-columns: 1fr; gap: 20px; }
+  .welcome-grid > .card { margin-bottom: 0; }
+  .music-section { min-height: 260px; }
+}
+
 @media (max-width: 520px) {
-  .page { width: min(100% - 20px, 760px); padding-top: 18px; }
+  .page { width: min(100% - 20px, 1120px); padding-top: 18px; }
+  .welcome-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 16px; }
+  .welcome-grid > .card { margin-bottom: 0; }
+  .music-section { min-height: 260px; }
   .card { border-radius: 23px; padding: 30px 20px; margin-bottom: 16px; }
   .hero { padding-top: 48px; padding-bottom: 42px; }
   .section-kicker { font-size: 9px; letter-spacing: 1.8px; }
   .letter-content { padding: 19px; }
 }
+
+
+/* Дополнительный блок с пожеланиями */
+.wishes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+  text-align: left;
+}
+.wish-card {
+  padding: 17px;
+  border: 1px solid #f3d3df;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fffafd, #fff1f6);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.wish-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px #c96e9318; }
+.wish-card summary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #89566e;
+  font-size: 11px;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+.wish-card summary::-webkit-details-marker { display: none; }
+.wish-icon { color: #df79a2; font-size: 20px; }
+.wish-plus { margin-left: auto; color: #d56c96; font-size: 17px; transition: transform .25s ease; }
+.wish-card[open] .wish-plus { transform: rotate(45deg); }
+.wish-card p { margin-top: 14px; color: #a17b8d; font-size: 11px; line-height: 1.9; animation: riseIn .35s both; }
+.wishes-sign { margin-top: 24px; color: #c16b91 !important; font: italic 17px "Playfair Display", serif; }
+@media (max-width: 700px) {
+  .wishes-grid { grid-template-columns: 1fr; }
+  .wish-card { padding: 18px; }
+}
+
+
+/* Дополнительный раздел: маленький план особенного дня */
+.day-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+  text-align: left;
+}
+.day-moment {
+  position: relative;
+  min-height: 190px;
+  padding: 22px 17px;
+  border: 1px solid #f2d2df;
+  border-radius: 20px;
+  background: linear-gradient(150deg, #fffafd, #fff0f6);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.day-moment:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px #c96e931c;
+}
+.day-time {
+  color: #d4779c;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.day-dot {
+  width: 11px;
+  height: 11px;
+  margin: 18px 0 14px;
+  border: 3px solid #e58aae;
+  border-radius: 50%;
+  background: #fff8fb;
+  box-shadow: 0 0 0 5px #f9dce8;
+}
+.day-moment h3 {
+  margin-bottom: 9px;
+  color: #805269;
+  font-size: 19px;
+}
+.day-moment p {
+  color: #a17b8d;
+  font-size: 10px;
+  line-height: 1.9;
+}
+.day-sign {
+  margin-top: 28px;
+  color: #c16b91 !important;
+  font: italic 17px "Playfair Display", serif;
+}
+@media (max-width: 820px) {
+  .day-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .day-timeline { grid-template-columns: 1fr; gap: 11px; }
+  .day-moment { min-height: auto; padding: 20px; }
+  .day-dot { margin: 14px 0 12px; }
+}
+
+
+/* Новый раздел: послания на разные случаи */
+.open-when-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+  text-align: left;
+}
+.open-when-card {
+  padding: 20px 21px;
+  border: 1px solid #f1d1de;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fffafd, #fff0f6);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.open-when-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px #c96e931c;
+}
+.open-when-card summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #89566e;
+  cursor: pointer;
+  list-style: none;
+}
+.open-when-card summary::-webkit-details-marker { display: none; }
+.open-when-card summary span { color: #df79a2; font-size: 23px; }
+.open-when-card summary strong { font-size: 12px; font-weight: 700; }
+.open-when-card summary b { margin-left: auto; color: #d56c96; font-size: 19px; transition: transform .25s ease; }
+.open-when-card[open] summary b { transform: rotate(45deg); }
+.open-when-card p { margin: 15px 0 2px; color: #a17b8d; font-size: 11px; line-height: 1.9; animation: riseIn .35s both; }
+.open-when-sign { margin-top: 25px; color: #c16b91 !important; font: italic 17px "Playfair Display", serif; }
+@media (max-width: 600px) {
+  .open-when-grid { grid-template-columns: 1fr; }
+  .open-when-card { padding: 18px; }
+}
+
+
+/* Выбор музыки */
+.music-choice-label { display:block; margin:18px 0 8px; color:#9b6b80; font-size:12px; font-weight:700; }
+.music-choice { width:100%; padding:13px 14px; border:1px solid #edc6d7; border-radius:14px; background:#fffafd; color:#89566e; font:inherit; font-size:13px; outline:none; }
+.music-choice:focus { border-color:#d875a0; box-shadow:0 0 0 3px #d875a022; }
+.music-hint { line-height:1.7; }
