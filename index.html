@@ -16,6 +16,7 @@
   <div class="hearts-layer" aria-hidden="true"></div>
 
   <main class="page">
+    <div class="welcome-grid">
     <section class="hero card">
       <div class="eyebrow"><span>✦</span> ОСОБЕННЫЙ ДЕНЬ <span>✦</span></div>
       <h1>С днём рождения,<br><span>Сабина!</span></h1>
@@ -24,6 +25,22 @@
       <button class="primary-btn" id="startButton">Начать сюрприз <span>♡</span></button>
       <p class="hint">Нажми, чтобы открыть маленькую историю</p>
     </section>
+
+    <section class="music-section card">
+      <div class="section-kicker">МЕЛОДИЯ ДЛЯ МОМЕНТА</div>
+      <h2>Сначала — музыка</h2>
+      <p>Включи любимую мелодию, а затем не спеша читай эту маленькую историю.</p>
+      <label class="music-choice-label" for="musicChoice">Выбери музыку для этого момента</label>
+      <select class="music-choice" id="musicChoice">
+        <option value="wanna-be-yours.mp3">Arctic Monkeys — I Wanna Be Yours</option>
+        <option value="cinnamon-girl.mp3">Cinnamon Girl</option>
+        <option value="love-wantiti.mp3">Love Wantiti</option>
+      </select>
+      <audio id="birthdayAudio" src="wanna-be-yours.mp3" preload="none"></audio>
+      <button class="music-button" id="musicButton"><span class="music-icon">♫</span><span id="musicLabel">Включить музыку</span><span class="equalizer"><i></i><i></i><i></i><i></i></span></button>
+      <p class="music-hint" id="musicHint">Сначала выбери песню, затем нажми кнопку ❤️</p>
+    </section>
+    </div>
 
     <section class="gift-section card" id="giftSection">
       <div class="section-kicker">01 / НЕБОЛЬШОЙ СЮРПРИЗ</div>
@@ -64,16 +81,90 @@
       </article>
     </section>
 
-    <section class="music-section card">
-      <div class="section-kicker">03 / МЕЛОДИЯ ДЛЯ МОМЕНТА</div>
-      <h2>Немного музыки</h2>
-      <p>Для этого момента — «I Wanna Be Yours».</p>
-      <audio id="birthdayAudio" src="wanna-be-yours.mp3" preload="none"></audio>
-      <button class="music-button" id="musicButton"><span class="music-icon">♫</span><span id="musicLabel">Включить I Wanna Be Yours</span><span class="equalizer"><i></i><i></i><i></i><i></i></span></button>
+
+
+
+    <section class="wishes-section card">
+      <div class="section-kicker">03 / НЕСКОЛЬКО ТЁПЛЫХ СЛОВ</div>
+      <h2>Маленькие пожелания для тебя</h2>
+      <p>Здесь спрятаны три пожелания. Открывай их по одному ✨</p>
+      <div class="wishes-grid">
+        <details class="wish-card">
+          <summary><span class="wish-icon">☀</span><span>На каждый день</span><span class="wish-plus">＋</span></summary>
+          <p>Пусть даже самые обычные дни находят способ становиться особенными, а поводов для улыбки будет больше, чем ты ожидаешь.</p>
+        </details>
+        <details class="wish-card">
+          <summary><span class="wish-icon">✿</span><span>Для твоих мечтаний</span><span class="wish-plus">＋</span></summary>
+          <p>Пусть у тебя хватает смелости мечтать о большом, сил идти к своему и удачи встречать на пути хорошие возможности.</p>
+        </details>
+        <details class="wish-card">
+          <summary><span class="wish-icon">♡</span><span>От меня лично</span><span class="wish-plus">＋</span></summary>
+          <p>Я желаю тебе побольше спокойных счастливых моментов, искренних людей рядом и улыбок, которые появляются сами собой.</p>
+        </details>
+      </div>
+      <p class="wishes-sign">Пусть всё хорошее обязательно тебя найдёт. — Диёр ♡</p>
+    </section>
+
+    <section class="day-section card">
+      <div class="section-kicker">04 / НЕСКОЛЬКО МОМЕНТОВ ДЛЯ ТЕБЯ</div>
+      <h2>Пусть этот день будет особенным</h2>
+      <p>Маленький план на день, в котором главное — твоё настроение.</p>
+      <div class="day-timeline">
+        <article class="day-moment">
+          <span class="day-time">☀ УТРО</span>
+          <div class="day-dot"></div>
+          <h3>Начни с улыбки</h3>
+          <p>Пусть первое настроение дня будет лёгким, тёплым и радостным.</p>
+        </article>
+        <article class="day-moment">
+          <span class="day-time">♡ ДЕНЬ</span>
+          <div class="day-dot"></div>
+          <h3>Загадай желание</h3>
+          <p>Не бойся мечтать о большом. Пусть у каждой мечты появится дорога к исполнению.</p>
+        </article>
+        <article class="day-moment">
+          <span class="day-time">✿ ВЕЧЕР</span>
+          <div class="day-dot"></div>
+          <h3>Сохрани приятное</h3>
+          <p>Запомни хотя бы один момент сегодняшнего дня, от которого стало тепло на душе.</p>
+        </article>
+        <article class="day-moment">
+          <span class="day-time">☾ В КОНЦЕ ДНЯ</span>
+          <div class="day-dot"></div>
+          <h3>Улыбнись ещё раз</h3>
+          <p>Пусть впереди будет много дней, которые захочется вспоминать с такой же улыбкой.</p>
+        </article>
+      </div>
+      <p class="day-sign">И пусть хорошее на этом не заканчивается. ♡</p>
+    </section>
+
+    <section class="open-when-section card">
+      <div class="section-kicker">05 / НЕБОЛЬШИЕ НАПОМИНАНИЯ</div>
+      <h2>Открой, когда тебе это нужно</h2>
+      <p>Небольшие слова, которые можно перечитать в любой момент.</p>
+      <div class="open-when-grid">
+        <details class="open-when-card">
+          <summary><span>☁</span><strong>Когда день не задался</strong><b>＋</b></summary>
+          <p>Не каждый день обязан быть идеальным. Дай себе немного времени, отдохни и помни: впереди ещё много хороших моментов.</p>
+        </details>
+        <details class="open-when-card">
+          <summary><span>♡</span><strong>Когда нужна поддержка</strong><b>＋</b></summary>
+          <p>Ты не обязана со всем справляться сразу. Шаг за шагом — и не забывай обращаться к тем, кому доверяешь.</p>
+        </details>
+        <details class="open-when-card">
+          <summary><span>✧</span><strong>Когда мечтаешь о будущем</strong><b>＋</b></summary>
+          <p>Пусть у тебя будет смелость выбирать свой путь, пробовать новое и радоваться даже маленьким победам.</p>
+        </details>
+        <details class="open-when-card">
+          <summary><span>☀</span><strong>Когда хочется улыбнуться</strong><b>＋</b></summary>
+          <p>Вот тебе напоминание от Диëра: ты заслуживаешь добрых слов, искренней заботы и множества счастливых мгновений.</p>
+        </details>
+      </div>
+      <p class="open-when-sign">Сохрани эти слова на любой день. ♡</p>
     </section>
 
     <section class="secret-section card">
-      <div class="section-kicker">04 / ТОЛЬКО ДЛЯ ТЕБЯ</div>
+      <div class="section-kicker">06 / ТОЛЬКО ДЛЯ ТЕБЯ</div>
       <h2>У меня есть секрет...</h2>
       <p>Кажется, тебе стоит нажать на это сердечко.</p>
       <button class="secret-button" id="secretButton" aria-label="Открыть секрет">♡</button>
@@ -92,5 +183,6 @@
   </main>
 
   <script src="script.js"></script>
+  <script src="music-picker.js"></script>
 </body>
 </html>
