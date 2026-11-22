@@ -13,7 +13,7 @@
     "cinnamon-girl.mp3": "Cinnamon Girl",
     "love-wantiti.mp3": "Love Wantiti",
     "those-eyes.mp3": "Those Eyes",
-    "navai-pryatki.mp3": "Прятки"
+    "navai-pryatki.mp3": "Прятки",
   };
 
   choice.addEventListener("change", () => {
