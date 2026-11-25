@@ -479,3 +479,24 @@ footer small { display: block; margin-top: 15px; font-size: 9px; }
 .music-choice { width:100%; padding:13px 14px; border:1px solid #edc6d7; border-radius:14px; background:#fffafd; color:#89566e; font:inherit; font-size:13px; outline:none; }
 .music-choice:focus { border-color:#d875a0; box-shadow:0 0 0 3px #d875a022; }
 .music-hint { line-height:1.7; }
+
+
+.secret-message[hidden] {
+    display: none !important;
+}
+
+.secret-message {
+    animation: secretAppear 0.7s ease;
+}
+
+@keyframes secretAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
