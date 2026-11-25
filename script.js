@@ -12,6 +12,7 @@ const musicButton = document.getElementById("musicButton");
 const musicLabel = document.getElementById("musicLabel");
 const heartsLayer = document.querySelector(".hearts-layer");
 
+
 startButton.addEventListener("click", () => {
   giftSection.scrollIntoView({ behavior: "smooth", block: "center" });
   burstHearts(12);
@@ -85,3 +86,13 @@ function burstHearts(amount) {
 }
 
 
+
+
+secretButton.addEventListener("click", () => {
+    secretMessage.hidden = !secretMessage.hidden;
+
+    secretButton.setAttribute(
+        "aria-expanded",
+        String(!secretMessage.hidden)
+    );
+});
